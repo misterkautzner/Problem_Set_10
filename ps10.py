@@ -236,35 +236,51 @@ def graphRemovedErr(points, kvals = [25, 50, 75, 100, 125, 150], cutoff = 0.1):
 
     # Your Code Here
     #1.1
+    totErrs = []
+    errs = []
+
     for k in kvals:
         sets = randomPartition(points, .2)
         holdout = sets[0]
         training = sets[1]
 
     #1.2
-        clusters, maxDist = kmeans(training, k, cutoff)
+        clusters, maxDist = kmeans(training, k, cutoff, County)
         totalError = 0.0
         centroids = []
         for c in clusters:
             centroid = c.computeCentroid()
             #listing centroids so nearest cluster to a point can be identified in 1.3
             centroids += [centroid]
-            for p in c:
-                totalError += p.distance(centroid)
-        totalError *= totalError
+            for p in c.getPoints():
+                totalError += (p.distance(centroid))**2
+                #Square each piece of the sum, not the sum itself.
+        totErrs += [totalError]
 
     #1.3
-        error = []
+        error = 0.0
         for p in holdout:
             nearestDist = p.distance(centroids[0])
             for c in centroids:
                 if p.distance(c) < nearestDist:
                     nearestDist = p.distance(c)
-            error += [nearestDist**2]
+            error += nearestDist**2
+            #Calculated the same way totalError was.
+        errs += [error]
 
-# Instructions aren't clear.  It seems that there should be many error values for 1.3, but 2.1 makes it seem like there should only be 1.
+        # Instructions aren't clear.  It seems that there should be many error values for 1.3, but 2.1 makes it seem like there should only be 1.
 
+    #2.1
+    pylab.title("Error in Training and Holdout Sets Against Number of Clusters")
+    pylab.xlabel("Number of Clusters")
+    pylab.ylabel("Error")
 
+    pylab.plot(kvals, totErrs, '-r', label = 'Training Error')
+    pylab.plot(kvals, errs, '-b', label = 'Holdout Error')
+    pylab.legend(loc = 'lower right')
+    pylab.show()
+
+graphRemovedErr(points)
 
 def graphPredictionErr(points, dimension, kvals = [25, 50, 75, 100, 125, 150], cutoff = 0.1):
     """
