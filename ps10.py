@@ -271,6 +271,11 @@ def graphRemovedErr(points, kvals = [25, 50, 75, 100, 125, 150], cutoff = 0.1):
         # Instructions aren't clear.  It seems that there should be many error values for 1.3, but 2.1 makes it seem like there should only be 1.
 
     #2.1
+    ratio = []
+    for i in range(6):
+        ratio += [totErrs[i]/errs[i]]
+
+    #First Plot
     pylab.title("Error in Training and Holdout Sets Against Number of Clusters")
     pylab.xlabel("Number of Clusters")
     pylab.ylabel("Error")
@@ -280,7 +285,30 @@ def graphRemovedErr(points, kvals = [25, 50, 75, 100, 125, 150], cutoff = 0.1):
     pylab.legend(loc = 'lower right')
     pylab.show()
 
+    #Plot of Ratio
+    pylab.title("Ratio of Error in Training Sets to Error in Holdout Sets Against Number of Clusters")
+    pylab.xlabel("Number of Clusters")
+    pylab.ylabel("Training Error Over Holdout Error")
+
+    pylab.plot(kvals, ratio)
+    pylab.show()
+
 #graphRemovedErr(points)
+
+myCounty = points[0]
+clusters, maxValue = kmeans(points, 50, .1, County)
+for p in points:
+    if p.getName() == "MOJefferson":
+        myCounty = p
+
+for i in range(3):
+    print
+    print "Cluster ", i+1
+    for c in clusters:
+        if myCounty in c.getPoints():
+            for p in c.getPoints():
+             print p.getName(), ", ",
+
 
 def graphPredictionErr(points, dimension, kvals = [25, 50, 75, 100, 125, 150], cutoff = 0.1):
     """
