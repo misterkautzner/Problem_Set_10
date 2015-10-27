@@ -92,7 +92,7 @@ def kmeans(points, k, cutoff, pointType, minIters = 3, maxIters = 100, toPrint =
     numIters = 0
     biggestChange = cutoff
     while (biggestChange >= cutoff and numIters < maxIters) or numIters < minIters:
-        print "Starting iteration " + str(numIters)
+        #print "Starting iteration " + str(numIters)
         newClusters = []
         for c in clusters:
             newClusters.append([])
@@ -118,8 +118,8 @@ def kmeans(points, k, cutoff, pointType, minIters = 3, maxIters = 100, toPrint =
         for p in c.getPoints():
             if p.distance(c.getCentroid()) > maxDist:
                 maxDist = p.distance(c.getCentroid())
-    print 'Total Number of iterations =', numIters, 'Max Diameter =', maxDist
-    print biggestChange
+    #print 'Total Number of iterations =', numIters, 'Max Diameter =', maxDist
+    #print biggestChange
     return clusters, maxDist
 
 #US Counties example
@@ -221,8 +221,8 @@ def test(points, k = 200, cutoff = 0.1):
 
         
 points = buildCountyPoints('counties.txt')
-random.seed(123)
-testPoints = random.sample(points, len(points)/10)
+#random.seed(123)
+#testPoints = random.sample(points, len(points)/10)
 
 
     
@@ -280,7 +280,7 @@ def graphRemovedErr(points, kvals = [25, 50, 75, 100, 125, 150], cutoff = 0.1):
     pylab.legend(loc = 'lower right')
     pylab.show()
 
-graphRemovedErr(points)
+#graphRemovedErr(points)
 
 def graphPredictionErr(points, dimension, kvals = [25, 50, 75, 100, 125, 150], cutoff = 0.1):
     """

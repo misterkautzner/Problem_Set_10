@@ -24,18 +24,8 @@
       <file leaf-file-name="ps10.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ps10.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.70308125">
-              <caret line="278" column="22" selection-start-line="278" selection-start-column="22" selection-end-line="278" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ps8.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../ps8/ps8.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="316" column="16" selection-start-line="309" selection-start-column="3" selection-end-line="316" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.57703084">
+              <caret line="282" column="1" selection-start-line="282" selection-start-column="1" selection-end-line="282" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -44,8 +34,8 @@
       <file leaf-file-name="counties.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/counties.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-4.1034484">
+              <caret line="1527" column="12" selection-start-line="1527" selection-start-column="0" selection-end-line="1527" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -283,7 +273,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1364" height="726" extended-state="1" />
+    <frame x="1" y="1" width="1364" height="726" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -345,15 +335,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/counties.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-4.1034484">
+          <caret line="1527" column="12" selection-start-line="1527" selection-start-column="0" selection-end-line="1527" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../ps8/ps8.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="1.1295336">
           <caret line="316" column="16" selection-start-line="309" selection-start-column="3" selection-end-line="316" selection-end-column="16" />
           <folding />
         </state>
@@ -361,8 +351,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ps10.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70308125">
-          <caret line="278" column="22" selection-start-line="278" selection-start-column="22" selection-end-line="278" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.57703084">
+          <caret line="282" column="1" selection-start-line="282" selection-start-column="1" selection-end-line="282" selection-end-column="1" />
           <folding />
         </state>
       </provider>
