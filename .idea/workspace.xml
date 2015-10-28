@@ -24,8 +24,8 @@
       <file leaf-file-name="ps10.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ps10.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0952381">
-              <caret line="303" column="18" selection-start-line="303" selection-start-column="18" selection-end-line="303" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.7619048">
+              <caret line="375" column="131" selection-start-line="375" selection-start-column="131" selection-end-line="375" selection-end-column="131" />
               <folding />
             </state>
           </provider>
@@ -34,8 +34,8 @@
       <file leaf-file-name="counties.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/counties.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.1034484">
-              <caret line="1527" column="12" selection-start-line="1527" selection-start-column="0" selection-end-line="1527" selection-end-column="12" />
+            <state vertical-scroll-proportion="-0.5862069">
+              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -46,6 +46,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/counties.txt" />
         <option value="$PROJECT_DIR$/ps10.py" />
       </list>
     </option>
@@ -333,14 +334,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/counties.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.1034484">
-          <caret line="1527" column="12" selection-start-line="1527" selection-start-column="0" selection-end-line="1527" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../ps8/ps8.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1295336">
@@ -349,10 +342,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/counties.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5862069">
+          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ps10.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0952381">
-          <caret line="303" column="18" selection-start-line="303" selection-start-column="18" selection-end-line="303" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.7619048">
+          <caret line="375" column="131" selection-start-line="375" selection-start-column="131" selection-end-line="375" selection-end-column="131" />
           <folding />
         </state>
       </provider>

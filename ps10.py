@@ -30,7 +30,7 @@ class Point(object):
         return self.name
 
 class County(Point):
-    weights = pylab.array([1.0] * 14)
+    weights = pylab.array([1.0] * 2 + [0.0] * 6 + [0.75] + [0.25] * 2 + [0.0] * 3)
     
     # Override Point.distance to use County.weights to decide the
     # significance of each dimension
@@ -295,21 +295,30 @@ def graphRemovedErr(points, kvals = [25, 50, 75, 100, 125, 150], cutoff = 0.1):
 
 #graphRemovedErr(points)
 
-myCounty = points[0]
-clusters, maxValue = kmeans(points, 50, .1, County)
-for p in points:
-    if p.getName() == "MOJefferson":
-        myCounty = p
+#Problem #2
+def personalCounty():
+    myCounty = points[0]
+    clusters, maxValue = kmeans(points, 50, .1, County)
+    for p in points:
+        if p.getName() == "MOJefferson":
+            myCounty = p
 
-for i in range(3):
-    print
-    print "Cluster ", i+1
-    for c in clusters:
-        if myCounty in c.getPoints():
-            for p in c.getPoints():
-             print p.getName(), ", ",
+    # for a in myCounty.getAttrs():
+    #     print a
 
+    for i in range(3):
+        print
+        print "Cluster ", i+1
+        for c in clusters:
+            if myCounty in c.getPoints():
+                for p in c.getPoints():
+                    print p.getName(), p.getAttrs(), ", ",
 
+# print [1.0] * 2 + [0.0] + [1.0] * 11
+
+# personalCounty()
+
+#Problem #3
 def graphPredictionErr(points, dimension, kvals = [25, 50, 75, 100, 125, 150], cutoff = 0.1):
     """
     Given input points and a dimension to predict, should cluster on the
@@ -318,4 +327,50 @@ def graphPredictionErr(points, dimension, kvals = [25, 50, 75, 100, 125, 150], c
     """
 
 	# Your Code Here
-    
+    sets = randomPartition(points, .2)
+    holdout = sets[0]
+    training = sets[1]
+    kPov = []
+
+    for k in kvals:
+        clusters, maxDist = kmeans(training, k, cutoff, County)
+        totalPoverty = 0.0
+        centroids = []
+
+        for c in clusters:
+            centroid = c.computeCentroid()
+
+            clustPov = 0.0
+            pointsInClust = 0.0
+            for point in c.getPoints():
+                clustPov += point.getOriginalAttrs()[2]
+                pointsInClust += 1.0
+
+            avgPov = clustPov/pointsInClust
+            centroids += [(centroid, avgPov)]
+
+            for p in holdout:
+                nearestDist = p.distance(centroids[0][0])*2
+                for c in centroids:
+                    if p.distance(c[0]) < nearestDist:
+                        nearestDist = p.distance(c[0])
+                        cent = c
+
+                totalPoverty += (cent[1] - p.getOriginalAttrs()[2])**2
+
+        kPov += [totalPoverty]
+    print "kPov = ", kPov
+
+    pylab.title("Sum of Squares of Differences in Poverty Against Number of Clusters")
+    pylab.xlabel("Number of Clusters")
+    pylab.ylabel("Sum of Squares of Differences in Poverty")
+
+    pylab.plot(kvals, kPov)
+    pylab.show()
+
+
+graphPredictionErr(points, 14)
+
+#  kPov =  [381985.52370212536, 848950.90434995515, 1057645.9482855613, 1284941.7017407024, 1719048.5856780594, 2008543.0732370303]
+#  kPov =  [403360.04375900381, 740605.08839006757, 813167.4108407785, 1077249.415642366, 1083057.1530805263, 1221265.626733839]
+#  kPov =  [229657.02345937095, 399037.87631610164, 555061.50895070855, 836610.74306787935, 888232.43948074966, 1192884.1215942488]
